@@ -8,6 +8,7 @@ import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
+import { Companies } from '@/components/Companies'
 import { Testimonial } from '@/components/Testimonial'
 import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
 import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
@@ -19,50 +20,9 @@ import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import MaxStirner1 from '@/images/clients/phobia/MaxStirner1.svg.png'
-import onlyfans from '@/images/clients/companies/onlyfans.svg'
-import chaturbate from '@/images/clients/companies/chaturbate.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { loadCaseStudies } from '@/lib/mdx'
 
-const clients = [
-  ['OnlyFans', onlyfans],
-  ['Chaturbate', chaturbate],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
-]
-
-function Clients() {
-  return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
-      <Container>
-        <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We’ve worked with hundreds of amazing people
-          </h2>
-          <div className="h-px flex-auto bg-neutral-800" />
-        </FadeIn>
-        <FadeInStagger faster>
-          <ul
-            role="list"
-            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
-          >
-            {clients.map(([client, logo]) => (
-              <li key={client}>
-                <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
-                </FadeIn>
-              </li>
-            ))}
-          </ul>
-        </FadeInStagger>
-      </Container>
-    </div>
-  )
-}
 
 function CaseStudies({ caseStudies }) {
   return (
@@ -146,20 +106,20 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Web development">
+            <ListItem title="Philosophy">
               As egoists we take great enjoyment in helping others, we do not do this out of philanthropy
               but rather for money and our own desire to see our partners succeed (they are an extension of ourselves)
             </ListItem>
-            <ListItem title="Application development">
+            <ListItem title="Pinciples">
               We are a union of egoists, we come together as completely seperate indivduals yet hold all the more firmly
               together in our love for success, philosophy, and business
             </ListItem>
-            <ListItem title="E-commerce">
+            <ListItem title="Ethics">
               Bigger than money. We aim to build lifestyles, and increase our power in more ways than one. We understand
               that money is a tool that can be useful but what is much more important is the information that we gain from one 
               another through collaberation
             </ListItem>
-            <ListItem title="Custom content management">
+            <ListItem title="Growth">
               We do not take control over your brand. Rather we install in your mind the programs, mental heuristics, principles, philosophy, and ethics
               that will help you even when you depart us. These principles will carry you through even beyond into life itself, since everything that we do is 
               not done in isolation but rather is a part of the absolute.
@@ -173,7 +133,7 @@ function Services() {
 
 export const metadata = {
   description:
-    'We are a development studio working at the intersection of design and technology.',
+    'We build relationships',
 }
 
 export default async function Home() {
@@ -193,7 +153,7 @@ export default async function Home() {
         </FadeIn>
       </Container>
 
-      <Clients />
+      <Companies/>
 
       <CaseStudies caseStudies={caseStudies} />
 
